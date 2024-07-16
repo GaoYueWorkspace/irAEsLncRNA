@@ -63,9 +63,6 @@ if(T){
 ## Figure 4.C && Supplementary Figure 3.B
 if(T){
   
-  export(a,"D:\\DLL\\TCGA\\0.文章\\终终终\\数据和代码\\代码\\图代码\\Figure 4.C.txt")
-  export(b,"D:\\DLL\\TCGA\\0.文章\\终终终\\数据和代码\\代码\\图代码\\Supplementary Figure 3.B_NK_cells.txt")
-  export(c,"D:\\DLL\\TCGA\\0.文章\\终终终\\数据和代码\\代码\\图代码\\Supplementary Figure 3.B_NKT_xCell.txt")
   
   p=ggplot(da,aes(x=cancer,y=value,fill=type))+
     geom_boxplot(width=0.7,
@@ -103,7 +100,6 @@ if(T){
 }
 ## Figure 4.D
 if(T){
-  save(colann,rowann,xx,file = "D:\\DLL\\TCGA\\0.文章\\终终终\\数据和代码\\代码\\图代码\\Figure 4.D.Rda")
   
   name=c("YlOrRd","YlGnBu","YlGn","Reds","RdPu","Purples","PuBu",
          "OrRd","Oranges","Greys","Greens","GnBu","BuPu","Blues")
@@ -177,11 +173,6 @@ if(T){
 }
 ## Figure 4.F && Supplementary Figure 3.E
 if(T){
-  a=import("D:\\DLL\\TCGA\\Part4\\0.4.3.cell line\\表达箱线图\\Result_LUAD.xlsx")
-  b=import("D:\\DLL\\TCGA\\Part4\\0.4.3.cell line\\表达箱线图\\Result_OV.xlsx")
-  
-  export(a,"D:\\DLL\\TCGA\\0.文章\\终终终\\数据和代码\\代码\\图代码\\Figure 4.F.xlsx")
-  export(b,"D:\\DLL\\TCGA\\0.文章\\终终终\\数据和代码\\代码\\图代码\\Supplementary Figure 3.E.xlsx")
   
   p=ggplot(xx,aes(x=celline,y=value,fill=type))+
     geom_boxplot(width=0.6,
@@ -216,10 +207,7 @@ if(T){
 }
 ## Figure 4.G
 if(T){
-  export(list(da2=da2,
-              da1=da1
-  ),"D:\\DLL\\TCGA\\0.文章\\终终终\\数据和代码\\代码\\图代码\\Figure 4.G.xlsx")
-  
+ 
   set.seed(2)
   max=50
   ggplot() +
@@ -315,7 +303,6 @@ if(T){
 }
 ## Supplementary Figure 3.A
 if(T){
-  export(df,"D:\\DLL\\TCGA\\0.文章\\终终终\\数据和代码\\代码\\图代码\\Supplementary Figure 3.A.xlsx")
   
   df1<-data.frame(x = seq(1.5,length(unique(df$cancer))-0.5,1),
                   xend = seq(1.5,length(unique(df$cancer))-0.5,1),
@@ -354,7 +341,6 @@ if(T){
 }
 ## Supplementary Figure 3.C
 if(T){
-  export(df,"D:\\DLL\\TCGA\\0.文章\\终终终\\数据和代码\\代码\\图代码\\Supplementary Figure 3.C.xlsx")
   ggplot(data=df,aes(x=cancer,y=value,fill=Type)) + 
     geom_bar(stat="identity",position="fill",width = 0.8) +
     scale_fill_manual(values=c("Mylnc"=adjustcolor("#F7ED11",alpha.f = 0.7),
@@ -370,7 +356,6 @@ if(T){
 }
 ## Supplementary Figure 3.D
 if(T){
-  export(da,"D:\\DLL\\TCGA\\0.文章\\终终终\\数据和代码\\代码\\图代码\\Supplementary Figure 3.D.xlsx")
   #####  文本信息
   cancer=data.frame(cancer=unique(da$cancer),
                     cancer_y=seq(2,(2*length(unique(da$cancer))),by=2),check.names = F)

@@ -1,15 +1,5 @@
 ## Figure 2.A
 if(T){
-  rm(list = ls())
-  library(ggplot2)
-  library(scatterpie)
-  library(RColorBrewer)
-  library(rio)
-  library(stringr)
-  library(dplyr)
-  library(ggsci)
-  
-  export(list(data=data,text=text),"D:\\DLL\\TCGA\\0.文章\\终终终\\数据和代码\\代码\\图代码\\Figure 2.A.xlsx")
   
   ######  画图信息
   ggplot() +
@@ -130,7 +120,6 @@ if(T){
 if(T){
   
   cols=c("#F4B4B4","#C67DA3","#715D70","#46A265","#6F72B6","#FAEACA")
-  export(data,"D:\\DLL\\TCGA\\0.文章\\终终终\\数据和代码\\代码\\图代码\\Figure 2.C.xlsx")
   
   col2=data.frame(id=c(unique(data$Sub_Class)),
                   col=cols[1:length(unique(data$Sub_Class))])
@@ -171,11 +160,6 @@ if(T){
 }
 ## Figure 2.D
 if(T){
-  rm(list=ls())
-  library(ggvenn)
-  library(rio)
-  library(stringr)
-  library(dplyr)
   
   p=ggplot(data=df,aes(x=Type,y=value,fill=ID)) + 
     geom_bar(stat="identity",position="fill",width = 0.8) +
@@ -200,7 +184,6 @@ if(T){
 }
 ## Figure 2.E
 if(T){
-  export(da,"D:\\DLL\\TCGA\\0.文章\\终终终\\数据和代码\\代码\\图代码\\Figure 2.E.xlsx")
   ggplot(data=da,aes(x=Type,y=value,fill=ID)) + 
     geom_bar(stat="identity",position="fill",width = 0.8) +
     scale_fill_manual(values=c("#b2dec4","#f6b3b7","#62C7CC"))+

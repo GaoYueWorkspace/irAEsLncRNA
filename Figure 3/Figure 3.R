@@ -1,6 +1,5 @@
 ## Figure 3.A
 if(T){
-  export(df,"D:\\DLL\\TCGA\\0.文章\\终终终\\数据和代码\\代码\\图代码\\Figure 3.A.xlsx")
   
   ggplot(data=df,aes(x=Var1,y=Freq,fill=Type)) + 
     geom_bar(stat="identity",position="fill",width = 0.7) +
@@ -58,10 +57,6 @@ if(T){
                                        yend = zhong.y),
                           size=df$segment.size,
                           color=df$segment)
-  export(list(df=df,
-              zuo.df=zuo.df,
-              zhong.df=zhong.df,
-              you.df=you.df),"D:\\DLL\\TCGA\\0.文章\\终终终\\数据和代码\\代码\\图代码\\Figure 3.C.xlsx")
   
   ######  合并图层
   pp = p+geom_segment(data = df, aes(x = zhong.x, 
@@ -112,7 +107,6 @@ if(T){
 }
 ## Figure 3.D
 if(T){
-  export(skcm.iraes.lnc.score,"D:\\DLL\\TCGA\\0.文章\\终终终\\数据和代码\\代码\\图代码\\Figure 3.D.xlsx")
   skcm.iraes.lnc.score %>%
     tidyr::pivot_longer(cols = -my.project,
                         names_to = "fun",
